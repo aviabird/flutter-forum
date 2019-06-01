@@ -12,12 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  MaterialPageRoute createPost =
-      MaterialPageRoute(builder: (context) => CreatePost());
-  MaterialPageRoute listPost =
-      MaterialPageRoute(builder: (context) => ListPost());
-  MaterialPageRoute postDetail =
-      MaterialPageRoute(builder: (context) => PostDetail());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,20 +19,28 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Flutter Forum'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.create, ),
+            icon: Icon(
+              Icons.create,
+            ),
             onPressed: () {
+              MaterialPageRoute createPost =
+                  MaterialPageRoute(builder: (context) => CreatePost());
               Navigator.push(context, createPost);
             },
           ),
           IconButton(
             icon: Icon(Icons.list),
             onPressed: () {
+              MaterialPageRoute listPost =
+                  MaterialPageRoute(builder: (context) => ListPost());
               Navigator.push(context, listPost);
             },
           ),
           IconButton(
             icon: Icon(Icons.poll),
             onPressed: () {
+              MaterialPageRoute postDetail =
+                  MaterialPageRoute(builder: (context) => PostDetail());
               Navigator.push(context, postDetail);
             },
           )
