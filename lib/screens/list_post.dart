@@ -2,6 +2,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter_forum/screens/post_detail.dart';
+import 'package:flutter_forum/screens/create_post.dart';
 
 class ListPost extends StatefulWidget {
   @override
@@ -35,6 +36,18 @@ class _ListPostState extends State<ListPost> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Forum'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.create,
+            ),
+            onPressed: () {
+              MaterialPageRoute createPost =
+                  MaterialPageRoute(builder: (context) => CreatePost());
+              Navigator.push(context, createPost);
+            },
+          )
+        ]
       ),
       body: postListResponse != null
           ? ListView.builder(

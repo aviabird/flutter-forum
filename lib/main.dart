@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_forum/screens/home.dart';
+import 'package:flutter_forum/screens/list_post.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: ListPost(),
     );
   }
 }
