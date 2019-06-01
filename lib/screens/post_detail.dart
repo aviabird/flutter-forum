@@ -18,6 +18,7 @@ class _PostDetailState extends State<PostDetail> {
   List<Post> posts = [];
   final String app_url = "https://flutterforum.co";
   bool _isLoading = true;
+  String topic_title = "";
 
   @override
   void initState() {
@@ -32,6 +33,7 @@ class _PostDetailState extends State<PostDetail> {
     print(url);
     http.get(url).then((response) {
       responseBody = json.decode(response.body);
+      topic_title = responseBody['title'];
       responseBody['post_stream']['posts'].forEach((post) {
         print(post['display_username']);
 
@@ -51,7 +53,7 @@ class _PostDetailState extends State<PostDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Create Post'),
+          title: Text(topic_title),
         ),
         body: _isLoading ? Center(child: CircularProgressIndicator()) : get_post_widget()) ;
   }
