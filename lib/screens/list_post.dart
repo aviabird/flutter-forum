@@ -50,7 +50,7 @@ class _ListPostState extends State<ListPost> {
   Widget postItem(int index) {
     return GestureDetector(
         onTap: () {
-          goToDetailsPage(postListResponse["latest_posts"][index]["id"]);
+          goToDetailsPage(postListResponse["latest_posts"][index]["topic_id"]);
         },
         child: Card(
             child: new Container(
@@ -81,9 +81,9 @@ class _ListPostState extends State<ListPost> {
     );
   }
 
-  goToDetailsPage(postId) {
+  goToDetailsPage(topicId) {
     MaterialPageRoute postDetail =
-        MaterialPageRoute(builder: (context) => PostDetail());
+        MaterialPageRoute(builder: (context) => PostDetail(topicId));
     Navigator.push(context, postDetail);
   }
 }
