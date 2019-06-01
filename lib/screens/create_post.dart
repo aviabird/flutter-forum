@@ -269,6 +269,7 @@ class _CreatePostState extends State<CreatePost> {
                 title: Text('Errors found'),
                 actions: <Widget>[
                   FlatButton(
+                    // color: Colors.blue,
                     child: Text('Okay'),
                     onPressed: () => Navigator.pop(context),
                   )
