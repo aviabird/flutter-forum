@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Colors.white
+        primaryColor: Colors.blue,
       ),
       home: HomeScreen(),
     );
