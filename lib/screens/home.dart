@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.poll),
             onPressed: () {
               MaterialPageRoute postDetail =
-                  MaterialPageRoute(builder: (context) => PostDetail());
+                  MaterialPageRoute(builder: (context) => PostDetail(18));
               Navigator.push(context, postDetail);
             },
           )
